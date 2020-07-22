@@ -5,9 +5,9 @@
     "passes": 6,
     "pending": 0,
     "failures": 0,
-    "start": "2020-07-02T17:34:24.006Z",
-    "end": "2020-07-02T17:34:26.867Z",
-    "duration": 2861,
+    "start": "2020-07-02T18:01:12.108Z",
+    "end": "2020-07-02T18:01:14.578Z",
+    "duration": 2470,
     "testsRegistered": 6,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "de07b4ed-88bb-41ac-9fd0-32757e636eed",
+      "uuid": "2c2c3dcb-2d86-437d-916e-2c891186d06e",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,18 +27,18 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "98dfa200-72f0-455d-816e-3b3d41a7a711",
+          "uuid": "03d9222f-1e77-4df3-b49b-05ff1c70e6c5",
           "title": "Post",
-          "fullFile": "C:\\projetos\\pessoais\\automacaoApi\\test\\usuarios\\postAutenticarUsuario.spec.js",
+          "fullFile": "C:\\projetos\\pessoais\\Automacao_Api_Ticket\\test\\usuarios\\postAutenticarUsuario.spec.js",
           "file": "\\test\\usuarios\\postAutenticarUsuario.spec.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "6da24199-1a75-4345-84fa-c5cf21d02bb4",
+              "uuid": "79117b38-9d5e-47f4-a5e0-7d18e847ed0e",
               "title": "quando eu autentico com email cadastrado ",
-              "fullFile": "C:\\projetos\\pessoais\\automacaoApi\\test\\usuarios\\postAutenticarUsuario.spec.js",
+              "fullFile": "C:\\projetos\\pessoais\\Automacao_Api_Ticket\\test\\usuarios\\postAutenticarUsuario.spec.js",
               "file": "\\test\\usuarios\\postAutenticarUsuario.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -47,7 +47,7 @@
                   "title": "então deve retornar 200",
                   "fullTitle": "Post quando eu autentico com email cadastrado  então deve retornar 200",
                   "timedOut": false,
-                  "duration": 1371,
+                  "duration": 1325,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -56,28 +56,28 @@
                   "context": null,
                   "code": "let usuario = {\n    \"email\":\"Glennie_Roob54@gmail.com\",\n    \"password\":\"dev100\"\n\n        } \n    chai.request(`${config.URL_BASE}`) \n    .post(\"/usuarios/v3/autenticar\")\n    .send(usuario)\n    .end((err,res) => {\n        if(err) done(err);\n        expect(res).to.have.status(200);\n        expect(res.body.acess_token).to.not.be.null\n        expect(res.body.atualizar_cadastro.atualizar).to.be.false;\n        expect(res.body.atualizar_cadastro.message).to.\n            equals(\"Não é necessário atualizar dados cadastrais.\");\n        expect(res.body.atualizar_cadastro.success).to.be.true;\n        done(); \n    });",
                   "err": {},
-                  "uuid": "782dbe02-e7f6-48cb-b3e1-4c2e20a4df36",
-                  "parentUUID": "6da24199-1a75-4345-84fa-c5cf21d02bb4",
+                  "uuid": "af9fa86a-6445-458a-9fa2-c7d56bade6b7",
+                  "parentUUID": "79117b38-9d5e-47f4-a5e0-7d18e847ed0e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "782dbe02-e7f6-48cb-b3e1-4c2e20a4df36"
+                "af9fa86a-6445-458a-9fa2-c7d56bade6b7"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1371,
+              "duration": 1325,
               "root": false,
               "rootEmpty": false,
               "_timeout": 3000
             },
             {
-              "uuid": "e7aac5b5-b50b-46f3-9efa-3410dc32e5d5",
+              "uuid": "ee3980c1-3816-468f-83e6-a1c8b57213ad",
               "title": "quando eu autentico com email não cadastrado",
-              "fullFile": "C:\\projetos\\pessoais\\automacaoApi\\test\\usuarios\\postAutenticarUsuario.spec.js",
+              "fullFile": "C:\\projetos\\pessoais\\Automacao_Api_Ticket\\test\\usuarios\\postAutenticarUsuario.spec.js",
               "file": "\\test\\usuarios\\postAutenticarUsuario.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -86,7 +86,7 @@
                   "title": "então deve retornar 400",
                   "fullTitle": "Post quando eu autentico com email não cadastrado então deve retornar 400",
                   "timedOut": false,
-                  "duration": 334,
+                  "duration": 344,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -95,28 +95,28 @@
                   "context": null,
                   "code": "let usuario = {\n    \"email\":randonEmail,\n    \"password\":\"dev100\"\n        }       \n    chai.request(`${config.URL_BASE}`) \n    .post(\"/usuarios/v3/autenticar\")\n    .send(usuario)\n    .end((err,res) => {\n        if(err) done(err);\n        expect(res).to.have.status(400);\n         expect(res.body.message).to.\n             equals(\"Parece que você não tem uma conta Ticket com este e-mail.\");\n        expect(res.body.success).to.be.false;\n        done(); \n    });",
                   "err": {},
-                  "uuid": "5767dadf-62bf-4ad9-9fbb-e8c418d23670",
-                  "parentUUID": "e7aac5b5-b50b-46f3-9efa-3410dc32e5d5",
+                  "uuid": "daffcf7b-6fe0-4e14-936b-f7d0cb0313b8",
+                  "parentUUID": "ee3980c1-3816-468f-83e6-a1c8b57213ad",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "5767dadf-62bf-4ad9-9fbb-e8c418d23670"
+                "daffcf7b-6fe0-4e14-936b-f7d0cb0313b8"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 334,
+              "duration": 344,
               "root": false,
               "rootEmpty": false,
               "_timeout": 3000
             },
             {
-              "uuid": "d0a68523-3a2c-4a86-9479-bcf4e22f2cc1",
+              "uuid": "3c17ddef-bd4f-40d9-8bfc-998cdefe61c2",
               "title": "quando eu autentico com senha inválida ",
-              "fullFile": "C:\\projetos\\pessoais\\automacaoApi\\test\\usuarios\\postAutenticarUsuario.spec.js",
+              "fullFile": "C:\\projetos\\pessoais\\Automacao_Api_Ticket\\test\\usuarios\\postAutenticarUsuario.spec.js",
               "file": "\\test\\usuarios\\postAutenticarUsuario.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -125,7 +125,7 @@
                   "title": "então deve retornar 400",
                   "fullTitle": "Post quando eu autentico com senha inválida  então deve retornar 400",
                   "timedOut": false,
-                  "duration": 248,
+                  "duration": 224,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -134,20 +134,20 @@
                   "context": null,
                   "code": "let usuario = {\n    \"email\":\"Glennie_Roob54@gmail.com\",\n    \"password\":\"dev1001\"\n    }\n   \n    chai.request(`${config.URL_BASE}`) \n    .post(\"/usuarios/v3/autenticar\")\n    .send(usuario)\n    .end((err,res) => {\n        if(err) done(err);\n        expect(res).to.have.status(400);\n        \n        expect(res.body.message).to.\n            equals(\"E-mail ou senha inválidos.\");\n         expect(res.body.success).to.be.false;\n        done(); \n    });",
                   "err": {},
-                  "uuid": "abc479c9-19c9-4e58-ba88-c83621afabc0",
-                  "parentUUID": "d0a68523-3a2c-4a86-9479-bcf4e22f2cc1",
+                  "uuid": "033cba27-24d0-4410-a159-b11bee9adcff",
+                  "parentUUID": "3c17ddef-bd4f-40d9-8bfc-998cdefe61c2",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "abc479c9-19c9-4e58-ba88-c83621afabc0"
+                "033cba27-24d0-4410-a159-b11bee9adcff"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 248,
+              "duration": 224,
               "root": false,
               "rootEmpty": false,
               "_timeout": 3000
@@ -163,18 +163,18 @@
           "_timeout": 3000
         },
         {
-          "uuid": "a96e9fd8-d83f-4f87-ae9a-82e2f4d7f555",
+          "uuid": "fbf78c62-4b4b-4c5a-b694-451be4968881",
           "title": "Post",
-          "fullFile": "C:\\projetos\\pessoais\\automacaoApi\\test\\usuarios\\postCriarUsuario.spec.js",
+          "fullFile": "C:\\projetos\\pessoais\\Automacao_Api_Ticket\\test\\usuarios\\postCriarUsuario.spec.js",
           "file": "\\test\\usuarios\\postCriarUsuario.spec.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "e1972f3d-e270-4d12-ba4a-e3cfd5584fe9",
+              "uuid": "a7257433-3a26-4b53-aebb-e7b6c56052e2",
               "title": "quando eu cadastro um novo usuario",
-              "fullFile": "C:\\projetos\\pessoais\\automacaoApi\\test\\usuarios\\postCriarUsuario.spec.js",
+              "fullFile": "C:\\projetos\\pessoais\\Automacao_Api_Ticket\\test\\usuarios\\postCriarUsuario.spec.js",
               "file": "\\test\\usuarios\\postCriarUsuario.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -183,7 +183,7 @@
                   "title": "então deve retornar 200",
                   "fullTitle": "Post quando eu cadastro um novo usuario então deve retornar 200",
                   "timedOut": false,
-                  "duration": 601,
+                  "duration": 263,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -192,28 +192,28 @@
                   "context": null,
                   "code": "let usuario = {\n        \"name\":\"Martin Seamus McFly\",\n        \"cellphone\":\"(32)9147-4938\",\n        \"email\":randonEmail,\n        \"password\":\"dev100\",\n        \"nascimento\":\"12/06/1968\",\n        \"cpf\":\"54688909179\"\n\n}       \n        chai.request(`${config.URL_BASE}`) \n        .post(\"/usuarios/v3.1\")\n        .send(usuario)\n        .end((err,res) => {\n            if(err) done(err);\n            //jsonData = res;\n            //email = jsonData.body.value.email;\n            expect(res).to.have.status(200);\n            expect(res.body.value.email).to.eqls(randonEmail);\n            expect(res.body.value.aceitoMarketing).to.\n                be.an('boolean');\n            expect(res.body.value.aceitoMarketing).to.eqls(true);\n            expect(res.body.success).to.be.an('boolean');\n            expect(res.body.success).to.be.true;\n            expect(res.body.message).to.eqls(\"\");\n            done(); \n        });",
                   "err": {},
-                  "uuid": "0b5ef8c0-208e-453b-a5a7-0bfd40b23aaa",
-                  "parentUUID": "e1972f3d-e270-4d12-ba4a-e3cfd5584fe9",
+                  "uuid": "7634d7b1-334d-413c-8bff-afa01f72684b",
+                  "parentUUID": "a7257433-3a26-4b53-aebb-e7b6c56052e2",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "0b5ef8c0-208e-453b-a5a7-0bfd40b23aaa"
+                "7634d7b1-334d-413c-8bff-afa01f72684b"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 601,
+              "duration": 263,
               "root": false,
               "rootEmpty": false,
               "_timeout": 3000
             },
             {
-              "uuid": "7fe535e3-4d63-4949-b357-18e6049f2d64",
+              "uuid": "d5e8087e-38c3-4420-a5b3-0171a12b8634",
               "title": "quando não informo email",
-              "fullFile": "C:\\projetos\\pessoais\\automacaoApi\\test\\usuarios\\postCriarUsuario.spec.js",
+              "fullFile": "C:\\projetos\\pessoais\\Automacao_Api_Ticket\\test\\usuarios\\postCriarUsuario.spec.js",
               "file": "\\test\\usuarios\\postCriarUsuario.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -222,7 +222,7 @@
                   "title": "então deve retornar 400",
                   "fullTitle": "Post quando não informo email então deve retornar 400",
                   "timedOut": false,
-                  "duration": 160,
+                  "duration": 142,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -231,28 +231,28 @@
                   "context": null,
                   "code": "let usuario = {\n        \"name\":\"Martin Seamus McFly\",\n        \"cellphone\":\"(32)9147-4938\",\n        \"email\":\"\",\n        \"password\":\"dev100\",\n        \"nascimento\":\"12/06/1968\",\n        \"cpf\":\"54688909179\"\n\n}       \n        chai.request(`${config.URL_BASE}`) \n        .post(\"/usuarios/v3.1\")\n        .send(usuario)\n        .end((err,res) => {\n            if(err) done(err);\n            expect(res).to.have.status(400);\n            expect(res.body.success).to.be.an('boolean');\n            expect(res.body.success).to.be.false;\n            expect(res.body.message).to.eqls(\"Email não informado\");\n            done(); \n        });",
                   "err": {},
-                  "uuid": "b3b43b6e-af28-423f-853c-34da0683e8c3",
-                  "parentUUID": "7fe535e3-4d63-4949-b357-18e6049f2d64",
+                  "uuid": "d34839cf-be9d-4ccc-b50f-9d5e8548626a",
+                  "parentUUID": "d5e8087e-38c3-4420-a5b3-0171a12b8634",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "b3b43b6e-af28-423f-853c-34da0683e8c3"
+                "d34839cf-be9d-4ccc-b50f-9d5e8548626a"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 160,
+              "duration": 142,
               "root": false,
               "rootEmpty": false,
               "_timeout": 3000
             },
             {
-              "uuid": "d71be8d8-533d-4c30-81d0-0890be4bfbdf",
+              "uuid": "c4fb34ca-d987-4b00-990f-c4553b3f86f9",
               "title": "quando não informo email",
-              "fullFile": "C:\\projetos\\pessoais\\automacaoApi\\test\\usuarios\\postCriarUsuario.spec.js",
+              "fullFile": "C:\\projetos\\pessoais\\Automacao_Api_Ticket\\test\\usuarios\\postCriarUsuario.spec.js",
               "file": "\\test\\usuarios\\postCriarUsuario.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -261,7 +261,7 @@
                   "title": "então deve retornar 400",
                   "fullTitle": "Post quando não informo email então deve retornar 400",
                   "timedOut": false,
-                  "duration": 132,
+                  "duration": 158,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -270,20 +270,20 @@
                   "context": null,
                   "code": "let usuario = {\n        \"name\":\"Martin Seamus McFly\",\n        \"cellphone\":\"(32)9147-4938\",\n        \"email\":randonEmail,\n        \"password\":\"\",\n        \"nascimento\":\"12/06/1968\",\n        \"cpf\":\"54688909179\"\n\n}       \n        chai.request(`${config.URL_BASE}`) \n        .post(\"/usuarios/v3.1\")\n        .send(usuario)\n        .end((err,res) => {\n            if(err) done(err);\n            expect(res).to.have.status(400);\n            expect(res.body.success).to.be.an('boolean');\n            expect(res.body.success).to.be.false;\n            expect(res.body.message).to.eqls(\"Senha não informada\");\n            done(); \n        });",
                   "err": {},
-                  "uuid": "bbd2287a-19c7-4ff9-be1d-a39a8901b4b0",
-                  "parentUUID": "d71be8d8-533d-4c30-81d0-0890be4bfbdf",
+                  "uuid": "847af66b-7b49-405a-87dc-9ec25448d19d",
+                  "parentUUID": "c4fb34ca-d987-4b00-990f-c4553b3f86f9",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "bbd2287a-19c7-4ff9-be1d-a39a8901b4b0"
+                "847af66b-7b49-405a-87dc-9ec25448d19d"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 132,
+              "duration": 158,
               "root": false,
               "rootEmpty": false,
               "_timeout": 3000
